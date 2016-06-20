@@ -1,4 +1,5 @@
 var Backbone = require('backbone');
+var ItemsCollection = require('../collections/ItemsCollection');
 
 var ListModel = Backbone.Model.extend({
   urlRoot: '/lists',
@@ -9,12 +10,14 @@ var ListModel = Backbone.Model.extend({
     items: []
   },
 
+
   parse: function(model) {
     var items = model.items || [];
     model.items = new Backbone.Collection(items);
-
     return model;
   }
+
 });
+
 
 module.exports = ListModel;

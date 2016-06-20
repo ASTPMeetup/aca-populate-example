@@ -13,6 +13,7 @@ var ListView = Backbone.View.extend({
 
   initialize: function() {
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'destroy', this.render);
   },
 
   render: function() {
